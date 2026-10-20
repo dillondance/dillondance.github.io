@@ -77,6 +77,14 @@
     .project p { color: var(--muted); line-height: 1.85; margin: 0; }
     .project-link { display: inline-block; margin-top: 21px; color: #176e66; font-weight: 750; font-size: .92rem; text-decoration: underline; text-underline-offset: 4px; }
     .project-link:hover { color: var(--navy); }
+    /* Featured project cards use the supplied thumbnails without cropping. */
+    .project-featured { padding: 0; overflow: hidden; display: flex; flex-direction: column; }
+    .project-thumb-link { display: block; line-height: 0; overflow: hidden; background: #102139; }
+    .project-thumb { display: block; width: 100%; height: auto; aspect-ratio: 1672 / 941; object-fit: contain; }
+    .project-featured .project-body { padding: 25px 30px 30px; flex: 1; }
+    .project-thumb-link:hover .project-thumb { opacity: .94; }
+    .project-thumb-link:focus-visible { outline: 3px solid #4cb6a7; outline-offset: -3px; }
+
     .contact { padding: 73px 0; background: var(--deep); color: #fff; }
     .contact-grid { display: flex; gap: 25px; justify-content: space-between; align-items: center; }
     .contact .section-label { color: #85dcd0; }
@@ -171,8 +179,28 @@
         <p class="section-label">04 / Selected technical projects</p><h2 class="section-title">Learning by building.</h2>
         <p class="lead">Personal projects that keep technical skills current. These are independent home-lab efforts, not claims of enterprise production deployments.</p>
         <div class="project-grid">
-          <article class="project"><span class="project-tag">Home lab</span><h3>NAS &amp; Self-hosted Services</h3><p>Designed and configured a network-attached storage environment with multiple Docker-based services, storage organization, backup planning, and private network access considerations.</p><a class="project-link" href="https://github.com/dillondance/homelab-nas-infrastructure" target="_blank" rel="noopener noreferrer">View project on GitHub ↗</a></article>
-          <article class="project"><span class="project-tag">Virtualization</span><h3>Home Assistant Migration</h3><p>Migrated a Home Assistant OS installation from a Raspberry Pi to a virtual machine on a NAS, including backup restoration and device passthrough configuration.</p><a class="project-link" href="https://github.com/dillondance/home-assistant-migration" target="_blank" rel="noopener noreferrer">View project on GitHub ↗</a></article>
+          <article class="project project-featured">
+            <a class="project-thumb-link" href="https://github.com/dillondance/homelab-nas-infrastructure" target="_blank" rel="noopener noreferrer" aria-label="View NAS and Homelab Infrastructure project on GitHub">
+              <img class="project-thumb" src="images/nas-homelab.webp" width="1672" height="941" loading="lazy" decoding="async" alt="NAS and Homelab Infrastructure illustrated project banner featuring a network storage appliance, Docker, VPN, automated services, and backup solutions">
+            </a>
+            <div class="project-body">
+              <span class="project-tag">Home lab</span>
+              <h3>NAS &amp; Self-hosted Services</h3>
+              <p>Designed and configured a network-attached storage environment with multiple Docker-based services, storage organization, backup planning, and private network access considerations.</p>
+              <a class="project-link" href="https://github.com/dillondance/homelab-nas-infrastructure" target="_blank" rel="noopener noreferrer">View project on GitHub ↗</a>
+            </div>
+          </article>
+          <article class="project project-featured">
+            <a class="project-thumb-link" href="https://github.com/dillondance/home-assistant-migration" target="_blank" rel="noopener noreferrer" aria-label="View Home Assistant Migration project on GitHub">
+              <img class="project-thumb" src="images/home-assistant-migration.webp" width="1672" height="941" loading="lazy" decoding="async" alt="Home Assistant Migration illustrated project banner depicting Raspberry Pi 4 migration to a NAS-hosted virtual machine, backup restoration, USB passthrough, and validation">
+            </a>
+            <div class="project-body">
+              <span class="project-tag">Virtualization</span>
+              <h3>Home Assistant Migration</h3>
+              <p>Migrated a Home Assistant OS installation from a Raspberry Pi to a virtual machine on a NAS, including backup restoration and device passthrough configuration.</p>
+              <a class="project-link" href="https://github.com/dillondance/home-assistant-migration" target="_blank" rel="noopener noreferrer">View project on GitHub ↗</a>
+            </div>
+          </article>
           <article class="project"><span class="project-tag">Networking</span><h3>Home Network Infrastructure</h3><p>Worked with multi-gigabit Ethernet switching, local services, client connectivity, and reliability considerations in a practical home network environment.</p></article>
           <article class="project"><span class="project-tag">Web development</span><h3>This Website</h3><p>Published a lightweight, responsive personal portfolio using HTML, CSS, GitHub Pages, custom DNS records, and GitHub Pages hosting.</p><a class="project-link" href="https://github.com/dillondance/dillondance.github.io" target="_blank" rel="noopener noreferrer">View website source ↗</a></article>
         </div>
